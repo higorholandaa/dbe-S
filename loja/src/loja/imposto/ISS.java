@@ -4,15 +4,15 @@ import java.math.BigDecimal;
 
 import loja.PedidoInterface;
 
-public class ICMS extends Imposto{
+public class ISS extends Imposto{
 
-	public ICMS(Imposto outroImposto) {
+	public ISS(Imposto outroImposto) {
 		super(outroImposto);
 	}
 
 	@Override
 	public BigDecimal calcular(PedidoInterface pedido) {
-		BigDecimal valorDoImposto = pedido.getValor().multiply(new BigDecimal("0.1"));
+		BigDecimal valorDoImposto = pedido.getValor().multiply(new BigDecimal("0.03"));
 		BigDecimal valorDoOutroImposto = BigDecimal.ZERO;
 		
 		if (outroImposto != null) {
